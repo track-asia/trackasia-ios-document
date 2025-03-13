@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GOOGLE_MAPS_API_KEY</key>
+	<string>AIzaSyDEYfN5At0Qyp5KCDhBTUaeBxYUqG-gOds</string>
+	<key>MLNMapboxAccessToken</key>
+	<string>pk.eyJ1Ijoic2FuZ25ndXllbjI1IiwiYSI6ImNsMGU0djFicjBmYzczam4wbnpmdjVrcGcifQ.s-R3of1BK-vomakvEGkgYw</string>
+</dict>
+</plist>
