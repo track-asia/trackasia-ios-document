@@ -310,7 +310,7 @@ TrackAsia là ứng dụng iOS demo sử dụng SwiftUI và TrackAsia Map SDK, t
 ## Đóng góp & liên hệ
 - Đóng góp code qua Pull Request, tuân thủ coding convention trong `Views/README.md`
 - Báo lỗi hoặc đề xuất tính năng mới qua Issues
-- Liên hệ: [your-email@example.com] hoặc [https://github.com/trackasia/trackasia-demo-ios]
+- Liên hệ: [your-email@example.com] hoặc [https://github.com/track-asia/trackasia-demo-ios]
 
 ## Hướng dẫn sử dụng từng màn hình chính
 

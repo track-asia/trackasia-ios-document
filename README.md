@@ -174,8 +174,6 @@ import MapboxNavigation
 import MapboxDirections
 
 class MapViewController: UIViewController {
-    var mapView: NavigationMapView?
-
     var mapView: NavigationMapView? {
       didSet {
           oldValue?.removeFromSuperview()
@@ -188,7 +186,7 @@ class MapViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let styleURL = URL(string: "https://maps.track-asia.com/styles/v1/-streets.json?key={{TRACKASIA_MAP_KEY}}")
+        let styleURL = URL(string: "https://maps.track-asia.com/styles/v1/streets.json?key={{TRACKASIA_MAP_KEY}}")
         let mv = NavigationMapView(frame: view.bounds, styleURL: styleURL)
         mapView = mv
         view.insertSubview(mv, at: 0)
