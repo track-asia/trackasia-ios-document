@@ -255,14 +255,21 @@ TrackAsia là ứng dụng iOS demo sử dụng SwiftUI và TrackAsia Map SDK, t
 - CocoaPods (hoặc Swift Package Manager)
 
 ### Cài đặt
-1. **Thêm TrackAsia SDK và các dependency vào Podfile:**
+1. **Thêm TrackAsia SDK qua Swift Package Manager (khuyến nghị — đúng cách app demo này tích hợp):**
+
+   Trong Xcode chọn **File ▸ Add Package Dependencies…** và thêm 2 package:
+   - Bản đồ: `https://github.com/track-asia/trackasia-gl-native-distribution` — chọn version **`2.0.3`** (product `TrackAsia`).
+   - Navigation: `https://github.com/track-asia/trackasia-navigation-ios` — chọn bản phát hành mới nhất (products `MapboxNavigation`, `MapboxCoreNavigation`).
+
+   Các dependency phụ trợ cài qua CocoaPods (đúng như `Podfile` của demo):
    ```ruby
-   pod 'TrackAsia', '~> 1.0'
-   pod 'MapboxDirections.swift'
-   pod 'MapboxCoreNavigation'
-   pod 'MapboxNavigation'
+   pod 'Alamofire', '~> 5.10.2'
+   pod 'GoogleMaps', '9.3.0'
+   pod 'MapboxGeocoder.swift', '~> 0.15'
    ```
-   Chạy `pod install`
+   Sau đó chạy `pod install`.
+
+   > ⚠️ **Không** dùng `pod 'TrackAsia'`. SDK bản đồ và navigation được nạp qua **SPM** như trên — khớp với cách app demo build thật (Podfile chỉ chứa Alamofire/GoogleMaps/MapboxGeocoder).
 
 2. **Copy các module cần thiết:**
    - `TrackAsia/Views/` (hoặc chỉ các Tabs/Components bạn muốn)

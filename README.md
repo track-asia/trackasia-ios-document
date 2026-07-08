@@ -75,6 +75,7 @@ target 'TrackAsiaSample' do
   use_frameworks!
 
   pod 'Alamofire', '~> 5.10.2'
+  pod 'GoogleMaps', '9.3.0'
   pod 'MapboxGeocoder.swift', '~> 0.15'
 end
 
