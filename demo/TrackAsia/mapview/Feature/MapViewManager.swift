@@ -27,7 +27,7 @@ class MapViewManager: ObservableObject {
 
     init() {
         // Tạo MapView với style mặc định
-        let styleURL = URL(string: "https://maps.track-asia.com/styles/v1/streets.json?key=public_key")!
+        let styleURL = URL(string: "https://maps.track-asia.com/styles/v2/streets.json?key=public")!
         mapView = MLNMapView(frame: .zero, styleURL: styleURL)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         

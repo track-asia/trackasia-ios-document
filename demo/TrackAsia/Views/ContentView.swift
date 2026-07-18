@@ -51,7 +51,9 @@ struct ContentView: View {
     @State private var countries: [String: String] = [
         "vn": "Việt Nam",
         "sg": "Singapore",
-        "th": "Thailand"
+        "th": "Thailand",
+        "tw": "Taiwan",
+        "my": "Malaysia"
     ]
     @State private var isLoading = false
     @State private var currentToast: Toast?

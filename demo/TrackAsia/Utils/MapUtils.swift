@@ -46,6 +46,10 @@ class MapUtils {
             return is3D == false ? Constants.urlStyleSG : Constants.urlStyle3DSG
         case "th":
             return is3D == false ? Constants.urlStyleTH : Constants.urlStyle3DTH
+        case "tw":
+            return is3D == false ? Constants.urlStyleTW : Constants.urlStyle3DVN
+        case "my":
+            return is3D == false ? Constants.urlStyleMY : Constants.urlStyle3DVN
         default:
             return is3D == false ? Constants.urlStyleVN : Constants.urlStyle3DVN
         }
@@ -60,6 +64,10 @@ class MapUtils {
             return "https://sg-maps.track-asia.com"
         case "th": 
             return "https://th-maps.track-asia.com"
+        case "tw":
+            return "https://tw-maps.track-asia.com"
+        case "my":
+            return "https://my-maps.track-asia.com"
         case "vietnam":
             print("✅ Using Vietnam API")
             return "https://maps.track-asia.com"
@@ -76,6 +84,10 @@ class MapUtils {
                 return 10.0
             case "th":
                 return 10.0
+            case "tw":
+                return 7.0
+            case "my":
+                return 7.0
             default:
                 return 10.0
         }
@@ -86,6 +98,8 @@ class MapUtils {
         case "vn": return "Việt Nam"
         case "sg": return "Singapore"
         case "th": return "Thailand"
+        case "tw": return "Taiwan"
+        case "my": return "Malaysia"
         default: return "Việt Nam"
         }
     }
@@ -98,6 +112,10 @@ class MapUtils {
             return CLLocationCoordinate2D(latitude: 1.3302, longitude: 103.8104)
         case "th":
             return CLLocationCoordinate2D(latitude: 13.27, longitude: 101.96)
+        case "tw":
+            return CLLocationCoordinate2D(latitude: 23.6978, longitude: 120.9605)
+        case "my":
+            return CLLocationCoordinate2D(latitude: 3.1390, longitude: 101.6869)
         default:
             return CLLocationCoordinate2D(latitude: 10.728073, longitude: 106.624054)
         }
@@ -115,6 +133,10 @@ class MapUtils {
             return LatLng(latitude: 1.3302, longitude: 103.8104)
         case "th":
             return LatLng(latitude: 13.27, longitude: 101.96)
+        case "tw":
+            return LatLng(latitude: 23.6978, longitude: 120.9605)
+        case "my":
+            return LatLng(latitude: 3.1390, longitude: 101.6869)
         default:
             return LatLng(latitude: 10.728073, longitude: 106.624054)
         }

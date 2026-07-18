@@ -1,5 +1,5 @@
 {
-  "originHash" : "bb2206e5ce5d6d379f8f243ec08be8f05b2843fd251dfef8affdcab19a90387e",
+  "originHash" : "4b784c8c01a77cdc84286cbeee0555b7ddd927a515a4c5583a2b33e2efeaa737",
   "pins" : [
     {
       "identity" : "mapbox-directions-swift",
@@ -33,17 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/track-asia/trackasia-gl-native-distribution",
       "state" : {
-        "branch" : "2.0.3",
-        "revision" : "530697abce50eb89b466916ad0ec3a7e3f1cfcdf"
-      }
-    },
-    {
-      "identity" : "trackasia-navigation-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/track-asia/trackasia-navigation-ios",
-      "state" : {
-        "branch" : "2.0.3",
-        "revision" : "5e9ad84506d63404bba8a62c4cb3fa55d75cc5e2"
+        "revision" : "530697abce50eb89b466916ad0ec3a7e3f1cfcdf",
+        "version" : "2.0.3"
       }
     },
     {

@@ -951,16 +951,12 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		9985736E2DB7288D00290C22 /* XCRemoteSwiftPackageReference "trackasia-navigation-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/track-asia/trackasia-navigation-ios";
-			requirement = {
-				branch = 2.0.3;
-				kind = branch;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		9985736E2DB7288D00290C22 /* XCLocalSwiftPackageReference "trackasia-navigation-ios" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "libs/trackasia-navigation-ios";
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		990504BC2D7552EF00642B35 /* MapboxNavigation */ = {
@@ -989,7 +985,7 @@
 		};
 		9985736F2DB7288D00290C22 /* MapboxNavigation */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9985736E2DB7288D00290C22 /* XCRemoteSwiftPackageReference "trackasia-navigation-ios" */;
+			package = 9985736E2DB7288D00290C22 /* XCLocalSwiftPackageReference "trackasia-navigation-ios" */;
 			productName = MapboxNavigation;
 		};
 		99898A1E2D7A898E004ED9B0 /* MapboxNavigation */ = {

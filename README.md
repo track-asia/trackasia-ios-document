@@ -140,10 +140,14 @@ Ví dụ nội dung mô tả: “Ứng dụng cần truy cập vị trí để h
 static let baseurl = "https://maps.track-asia.com/"
 static let baseurlSG = "https://sg-maps.track-asia.com/" 
 static let baseurlTH = "https://th-maps.track-asia.com/"
+static let baseurlTW = "https://tw-maps.track-asia.com/"
+static let baseurlMY = "https://my-maps.track-asia.com/"
 
-static let urlStyleVN = "https://maps.track-asia.com/styles/v1/streets.json?key=public"
-static let urlStyleSG = "https://sg-maps.track-asia.com/styles/v1/streets.json?key=public"
-static let urlStyleTH = "https://th-maps.track-asia.com/styles/v1/streets.json?key=public"
+static let urlStyleVN = "https://maps.track-asia.com/styles/v2/streets.json?key=public"
+static let urlStyleSG = "https://sg-maps.track-asia.com/styles/v2/streets.json?key=public"
+static let urlStyleTH = "https://th-maps.track-asia.com/styles/v2/streets.json?key=public"
+static let urlStyleTW = "https://tw-maps.track-asia.com/styles/v2/streets.json?key=public"
+static let urlStyleMY = "https://my-maps.track-asia.com/styles/v2/streets.json?key=public"
 
 // Sử dụng MapUtils để lấy URL động
 let styleURL = MapUtils.urlStyle(idCountry: "vn", is3D: false)
@@ -152,8 +156,18 @@ let styleURL = MapUtils.urlStyle(idCountry: "vn", is3D: false)
 **Lưu ý:**
 - Demo sử dụng key "public" cho testing
 - Production: thay bằng API key thực tế của bạn
-- Hỗ trợ 3 quốc gia: VN (mặc định), SG, TH
+- Hỗ trợ 5 quốc gia: VN (mặc định), SG, TH, TW, MY
 - Tự động chuyển đổi style dựa trên quốc gia được chọn
+
+**Style URLs theo quốc gia (v2):**
+
+| Quốc gia | Style URL |
+|----------|-----------|
+| VN (mặc định) | `https://maps.track-asia.com/styles/v2/streets.json?key=public` |
+| Singapore | `https://sg-maps.track-asia.com/styles/v2/streets.json?key=public` |
+| Thailand | `https://th-maps.track-asia.com/styles/v2/streets.json?key=public` |
+| Taiwan | `https://tw-maps.track-asia.com/styles/v2/streets.json?key=public` |
+| Malaysia | `https://my-maps.track-asia.com/styles/v2/streets.json?key=public` |
 
 
 
@@ -187,7 +201,7 @@ class MapViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let styleURL = URL(string: "https://maps.track-asia.com/styles/v1/streets.json?key={{TRACKASIA_MAP_KEY}}")
+        let styleURL = URL(string: "https://maps.track-asia.com/styles/v2/streets.json?key=public")
         let mv = NavigationMapView(frame: view.bounds, styleURL: styleURL)
         mapView = mv
         view.insertSubview(mv, at: 0)
@@ -263,3 +277,16 @@ class MapViewController: UIViewController {
 2. Cấu hình quyền truy cập vị trí trong Info.plist
 3. Test kỹ các tính năng trên nhiều thiết bị
 4. Tối ưu hiệu năng khi sử dụng nhiều tính năng cùng lúc
+
+#### Lỗi thường gặp
+
+**Xcode 26+ / Swift 6.3 build error trong trackasia-navigation-ios:**
+- Lỗi: `overriding declaration requires an 'override' keyword` trong `DashedLineView.swift`
+- Nguyên nhân: Swift 6.3 yêu cầu access level nhất quán giữa class và method
+- Cách khắc phục: Sử dụng local package từ `libs/trackasia-navigation-ios/` thay vì SPM remote
+- Đã patch `DashedLineView.swift`: đổi `func updateProperties()` → `public func updateDashedProperties()`
+- Project đã cấu hình `XCLocalSwiftPackageReference` trỏ đến `libs/trackasia-navigation-ios`
+
+**SPM Package Resolution:**
+- TrackAsia native SDK: SPM branch `2.0.3` từ `https://github.com/track-asia/trackasia-gl-native-distribution`
+- TrackAsia Navigation iOS: Local package từ `libs/trackasia-navigation-ios/` (branch 2.0.3)
